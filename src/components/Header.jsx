@@ -95,7 +95,7 @@ const Header = () => {
                     <Link to='/gallery'>Gallery</Link>
                   </li>
                   <li>
-                    <a href='terms.html'>Terms</a>
+                    <Link to='/terms'>Terms</Link>
                   </li>
                   <li>
                     <a href='privacy.html'>Privacy</a>
