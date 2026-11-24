@@ -1,5 +1,5 @@
-import AppointmentPageTitle from "../components/AppointmnetPageTitle";
-import Appointment from "../components/Appointmnet";
+import AppointmentPageTitle from "../components/AppointmentPageTitle";
+import Appointment from "../components/Appointment";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
