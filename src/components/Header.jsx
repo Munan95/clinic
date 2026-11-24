@@ -46,15 +46,15 @@ const Header = () => {
       {/* End Top Bar */}
       <div className='branding d-flex align-items-cente'>
         <div className='container position-relative d-flex align-items-center justify-content-between'>
-          <a href='index.html' className='logo d-flex align-items-center'>
+          <Link to='/' className='logo d-flex align-items-center'>
             {/* Uncomment the line below if you also wish to use an image logo */}
             {/* <img src="assets/img/logo.webp" alt=""> */}
             <h1 className='sitename'>Clinic</h1>
-          </a>
+          </Link>
           <nav id='navmenu' className='navmenu'>
             <ul>
               <li>
-                <Link to='/' className='active'>
+                <Link to='/' className="active">
                   Home
                 </Link>
               </li>
@@ -86,7 +86,7 @@ const Header = () => {
                     <Link to='/appointment'>Appointment</Link>
                   </li>
                   <li>
-                    <a href='testimonials.html'>Testimonials</a>
+                    <Link to='/testimonials'>Testimonials</Link>
                   </li>
                   <li>
                     <a href='faq.html'>Frequently Asked Questions</a>
