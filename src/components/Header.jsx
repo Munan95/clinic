@@ -92,7 +92,7 @@ const Header = () => {
                     <Link to='/faq'>Frequently Asked Questions</Link>
                   </li>
                   <li>
-                    <a href='gallery.html'>Gallery</a>
+                    <Link to='/gallery'>Gallery</Link>
                   </li>
                   <li>
                     <a href='terms.html'>Terms</a>
