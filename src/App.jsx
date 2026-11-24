@@ -14,6 +14,7 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import FaqPage from "./pages/FaqPage";
 import GalleryPage from "./pages/GalleryPage";
 import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/testimonials' Component={FaqPage} />
         <Route path='/testimonials' Component={GalleryPage} />
         <Route path='/terms' Component={TermsPage} />
+        <Route path='/privacy' Component={PrivacyPage} />
       </Routes>
     </Router>
   );

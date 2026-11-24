@@ -98,10 +98,10 @@ const Header = () => {
                     <Link to='/terms'>Terms</Link>
                   </li>
                   <li>
-                    <a href='privacy.html'>Privacy</a>
+                    <Link to='/privacy'>Privacy</Link>
                   </li>
                   <li>
-                    <a href='404.html'>404</a>
+                    <Link to='404.html'>404</Link>
                   </li>
                 </ul>
               </li>
