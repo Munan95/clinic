@@ -9,6 +9,7 @@ import DepartmentDetailsPage from "./pages/DepartmentDetailsPage";
 import ServicesPage from "./pages/ServicesPage";
 import DoctorsPage from "./pages/DoctorsPage";
 import ServiceDetailsPage from "./pages/ServiceDetailsPage";
+import AppointmentPage from "./pages/AppointmentPage";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/services' Component={ServicesPage} />
         <Route path='/service-details' Component={ServiceDetailsPage} />
         <Route path='/doctors' Component={DoctorsPage} />
+        <Route path='/appointment' Component={AppointmentPage} />
       </Routes>
     </Router>
   );

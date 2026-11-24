@@ -83,7 +83,7 @@ const Header = () => {
                     <Link to='/service-details'>Service Details</Link>
                   </li>
                   <li>
-                    <a href='appointment.html'>Appointment</a>
+                    <Link to='/appointment'>Appointment</Link>
                   </li>
                   <li>
                     <a href='testimonials.html'>Testimonials</a>
