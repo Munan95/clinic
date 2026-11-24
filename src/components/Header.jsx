@@ -149,7 +149,7 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <a href='contact.html'>Contact</a>
+                <Link to='/contact'>Contact</Link>
               </li>
             </ul>
             <i className='mobile-nav-toggle d-xl-none bi bi-list' />
@@ -157,7 +157,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
+  )
 };
 
 export default Header;
