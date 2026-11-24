@@ -1,3 +1,5 @@
+import Doctors from "../components/Doctors";
+import DoctorsPageTitle from "../components/DoctorsPageTitle";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -8,7 +10,8 @@ const DoctorsPage = () => {
       <Header />
 
       <main className='main'>
-        
+        <DoctorsPageTitle />
+        <Doctors />
       </main>
 
       {/* Footer */}
