@@ -1,4 +1,4 @@
-const Appointmnet = () => {
+const Appointment = () => {
     return (
         <section id="appointmnet" className="appointmnet section">
             <div className="container" data-aos="fade-up" data-aos-delay={100}>
@@ -163,4 +163,4 @@ const Appointmnet = () => {
     )
 };
 
-export default Appointmnet;
+export default Appointment;

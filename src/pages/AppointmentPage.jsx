@@ -1,5 +1,5 @@
-import Appointmnet from "../components/Appointmnet";
-import AppointmnetPageTitle from "../components/AppointmnetPageTitle";
+import AppointmentPageTitle from "../components/AppointmnetPageTitle";
+import Appointment from "../components/Appointmnet";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -10,8 +10,8 @@ const AppointmentPage = () => {
       <Header />
 
       <main className='main'>
-        <AppointmnetPageTitle />
-        <Appointmnet />
+        <AppointmentPageTitle />
+        <Appointment />
       </main>
 
       {/* Footer */}

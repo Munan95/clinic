@@ -1,4 +1,4 @@
-const AppointmnetPageTitle = () => {
+const AppointmentPageTitle = () => {
     return (
         <div className="page-title">
             <div className="heading">
@@ -30,4 +30,4 @@ const AppointmnetPageTitle = () => {
     )
 };
 
-export default AppointmnetPageTitle;
+export default AppointmentPageTitle;
