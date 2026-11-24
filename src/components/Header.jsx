@@ -65,10 +65,10 @@ const Header = () => {
                 <Link to='/departments'>Departments</Link>
               </li>
               <li>
-                <a href='services.html'>Services</a>
+                <Link to='/services'>Services</Link>
               </li>
               <li>
-                <a href='doctors.html'>Doctors</a>
+                <Link to='/doctors'>Doctors</Link>
               </li>
               <li className='dropdown'>
                 <a href='#'>
@@ -80,7 +80,7 @@ const Header = () => {
                     <Link to='/department-details'>Department Details</Link>
                   </li>
                   <li>
-                    <a href='service-details.html'>Service Details</a>
+                    <Link to='/service-details'>Service Details</Link>
                   </li>
                   <li>
                     <a href='appointment.html'>Appointment</a>

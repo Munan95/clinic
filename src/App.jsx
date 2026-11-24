@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import AboutPage from "./pages/AboutPage";
 import DepartmentsPage from "./pages/DepartmentsPage";
 import DepartmentDetailsPage from "./pages/DepartmentDetailsPage";
+import ServicesPage from "./pages/ServicesPage";
+import DoctorsPage from "./pages/DoctorsPage";
+import ServiceDetailsPage from "./pages/ServiceDetailsPage";
 
 function App() {
   useEffect(() => {
@@ -22,6 +25,9 @@ function App() {
         <Route path='/about' Component={AboutPage} />
         <Route path='/departments' Component={DepartmentsPage} />
         <Route path='/department-details' Component={DepartmentDetailsPage} />
+        <Route path='/services' Component={ServicesPage} />
+        <Route path='/service-details' Component={ServiceDetailsPage} />
+        <Route path='/doctors' Component={DoctorsPage} />
       </Routes>
     </Router>
   );
