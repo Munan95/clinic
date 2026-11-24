@@ -101,7 +101,7 @@ const Header = () => {
                     <Link to='/privacy'>Privacy</Link>
                   </li>
                   <li>
-                    <Link to='404.html'>404</Link>
+                    <Link to='/404'>404</Link>
                   </li>
                 </ul>
               </li>

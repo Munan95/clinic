@@ -15,6 +15,7 @@ import FaqPage from "./pages/FaqPage";
 import GalleryPage from "./pages/GalleryPage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
+import Error404Page from "./pages/Error404Page";
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
         <Route path='/testimonials' Component={GalleryPage} />
         <Route path='/terms' Component={TermsPage} />
         <Route path='/privacy' Component={PrivacyPage} />
+        <Route path='/404' Component={Error404Page} />
       </Routes>
     </Router>
   );
