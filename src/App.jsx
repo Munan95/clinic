@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import HomePage from "./pages/HomePage";
@@ -17,6 +18,15 @@ import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import Error404Page from "./pages/Error404Page";
 import ContactPage from "./pages/ContactPage";
+import Button from "./components/Button";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
   useEffect(() => {
@@ -45,6 +55,7 @@ function App() {
         <Route path='/404' Component={Error404Page} />
         <Route path='/contact' Component={ContactPage} />
       </Routes>
+      <Button />
     </Router>
   );
 }

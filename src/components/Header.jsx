@@ -1,163 +1,129 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+
+const mainLinks = [
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About" },
+  { to: "/departments", label: "Departments" },
+  { to: "/services", label: "Services" },
+  { to: "/doctors", label: "Doctors" },
+];
+
+const moreLinks = [
+  { to: "/department-details", label: "Department Details" },
+  { to: "/service-details", label: "Service Details" },
+  { to: "/appointment", label: "Appointment" },
+  { to: "/testimonials", label: "Testimonials" },
+  { to: "/faq", label: "Frequently Asked Questions" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/terms", label: "Terms" },
+  { to: "/privacy", label: "Privacy" },
+];
+
+const socials = [
+  { name: "twitter", icon: "bi-twitter-x" },
+  { name: "facebook", icon: "bi-facebook" },
+  { name: "instagram", icon: "bi-instagram" },
+  { name: "linkedin", icon: "bi-linkedin" },
+];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 200);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 200);
+    handleScroll(); // set the correct state on first render
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // The template CSS looks for this class on <body>
+  useEffect(() => {
+    document.body.classList.toggle("mobile-nav-active", mobileOpen);
+    return () => document.body.classList.remove("mobile-nav-active");
+  }, [mobileOpen]);
+
+  // Close menus after navigating
+  useEffect(() => {
+    setMobileOpen(false);
+    setMoreOpen(false);
+  }, [pathname]);
+
   return (
-    <header
-      id='header'
-      className={`header fixed-top ${isScrolled ? "bg-white" : ""}`}
-    >
-      <div className='topbar d-flex align-items-center dark-background'>
-        <div className='container d-flex justify-content-center justify-content-md-between'>
-          <div className='contact-info d-flex align-items-center'>
-            <i className='bi bi-envelope d-flex align-items-center'>
-              <a href='mailto:contact@example.com'>contact@example.com</a>
+    <header id="header" className={`header fixed-top ${isScrolled ? "bg-white" : ""}`}>
+      <div className="topbar d-flex align-items-center dark-background">
+        <div className="container d-flex justify-content-center justify-content-md-between">
+          <div className="contact-info d-flex align-items-center">
+            <i className="bi bi-envelope d-flex align-items-center">
+              <a href="mailto:contact@example.com">contact@example.com</a>
             </i>
-            <i className='bi bi-phone d-flex align-items-center ms-4'>
+            <i className="bi bi-phone d-flex align-items-center ms-4">
               <span>+1 5589 55488 55</span>
             </i>
           </div>
-          <div className='social-links d-none d-md-flex align-items-center'>
-            <a href='#!' className='twitter'>
-              <i className='bi bi-twitter-x' />
-            </a>
-            <a href='#!' className='facebook'>
-              <i className='bi bi-facebook' />
-            </a>
-            <a href='#!' className='instagram'>
-              <i className='bi bi-instagram' />
-            </a>
-            <a href='#!' className='linkedin'>
-              <i className='bi bi-linkedin' />
-            </a>
+          <div className="social-links d-none d-md-flex align-items-center">
+            {socials.map(({ name, icon }) => (
+              <a key={name} href="#!" className={name} aria-label={name}>
+                <i className={`bi ${icon}`} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
-      {/* End Top Bar */}
-      <div className='branding d-flex align-items-cente'>
-        <div className='container position-relative d-flex align-items-center justify-content-between'>
-          <Link to='/' className='logo d-flex align-items-center'>
-            {/* Uncomment the line below if you also wish to use an image logo */}
-            {/* <img src="assets/img/logo.webp" alt=""> */}
-            <h1 className='sitename'>Clinic</h1>
+
+      <div className="branding d-flex align-items-center">
+        <div className="container position-relative d-flex align-items-center justify-content-between">
+          <Link to="/" className="logo d-flex align-items-center">
+            <h1 className="sitename">Clinic</h1>
           </Link>
-          <nav id='navmenu' className='navmenu'>
+
+          <nav id="navmenu" className="navmenu">
             <ul>
-              <li>
-                <Link to='/' className="active">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to='/about'>About</Link>
-              </li>
-              <li>
-                <Link to='/departments'>Departments</Link>
-              </li>
-              <li>
-                <Link to='/services'>Services</Link>
-              </li>
-              <li>
-                <Link to='/doctors'>Doctors</Link>
-              </li>
-              <li className='dropdown'>
-                <a href='#'>
+              {mainLinks.map(({ to, label, end }) => (
+                <li key={to}>
+                  <NavLink to={to} end={end}>{label}</NavLink>
+                </li>
+              ))}
+
+              <li className="dropdown">
+                <a
+                  href="#"
+                  aria-expanded={moreOpen}
+                  className={moreOpen ? "active" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMoreOpen((open) => !open);
+                  }}
+                >
                   <span>More Pages</span>{" "}
-                  <i className='bi bi-chevron-down toggle-dropdown' />
+                  <i className="bi bi-chevron-down toggle-dropdown" />
                 </a>
-                <ul>
-                  <li>
-                    <Link to='/department-details'>Department Details</Link>
-                  </li>
-                  <li>
-                    <Link to='/service-details'>Service Details</Link>
-                  </li>
-                  <li>
-                    <Link to='/appointment'>Appointment</Link>
-                  </li>
-                  <li>
-                    <Link to='/testimonials'>Testimonials</Link>
-                  </li>
-                  <li>
-                    <Link to='/faq'>Frequently Asked Questions</Link>
-                  </li>
-                  <li>
-                    <Link to='/gallery'>Gallery</Link>
-                  </li>
-                  <li>
-                    <Link to='/terms'>Terms</Link>
-                  </li>
-                  <li>
-                    <Link to='/privacy'>Privacy</Link>
-                  </li>
-                  <li>
-                    <Link to='/404'>404</Link>
-                  </li>
+                <ul className={moreOpen ? "dropdown-active" : ""}>
+                  {moreLinks.map(({ to, label }) => (
+                    <li key={to}>
+                      <NavLink to={to}>{label}</NavLink>
+                    </li>
+                  ))}
                 </ul>
               </li>
-              <li className='dropdown'>
-                <a href='#'>
-                  <span>Dropdown</span>{" "}
-                  <i className='bi bi-chevron-down toggle-dropdown' />
-                </a>
-                <ul>
-                  <li>
-                    <a href='#'>Dropdown 1</a>
-                  </li>
-                  <li className='dropdown'>
-                    <a href='#'>
-                      <span>Deep Dropdown</span>{" "}
-                      <i className='bi bi-chevron-down toggle-dropdown' />
-                    </a>
-                    <ul>
-                      <li>
-                        <a href='#'>Deep Dropdown 1</a>
-                      </li>
-                      <li>
-                        <a href='#'>Deep Dropdown 2</a>
-                      </li>
-                      <li>
-                        <a href='#'>Deep Dropdown 3</a>
-                      </li>
-                      <li>
-                        <a href='#'>Deep Dropdown 4</a>
-                      </li>
-                      <li>
-                        <a href='#'>Deep Dropdown 5</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href='#'>Dropdown 2</a>
-                  </li>
-                  <li>
-                    <a href='#'>Dropdown 3</a>
-                  </li>
-                  <li>
-                    <a href='#'>Dropdown 4</a>
-                  </li>
-                </ul>
-              </li>
+
               <li>
-                <Link to='/contact'>Contact</Link>
+                <NavLink to="/contact">Contact</NavLink>
               </li>
             </ul>
-            <i className='mobile-nav-toggle d-xl-none bi bi-list' />
+
+            <i
+              className={`mobile-nav-toggle d-xl-none bi ${mobileOpen ? "bi-x" : "bi-list"}`}
+              onClick={() => setMobileOpen((open) => !open)}
+            />
           </nav>
         </div>
       </div>
     </header>
-  )
+  );
 };
 
 export default Header;
