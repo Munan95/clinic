@@ -35,7 +35,7 @@ const FeaturedServicesSection = () => {
                   Vestibulum ante ipsum primis in faucibus orci luctus et
                   ultrices posuere cubilia curae donec velit neque.
                 </p>
-                <a href='#!' className='main-cta'>
+                <a href='/services' className='main-cta'>
                   Explore Our Services
                 </a>
               </div>
