@@ -61,7 +61,7 @@ const Header = () => {
               <a href="mailto:contact@example.com">contact@example.com</a>
             </i>
             <i className="bi bi-phone d-flex align-items-center ms-4">
-              <span>+1 5589 55488 55</span>
+              <span><a href="tel:+1 5589 55488 55">+1 5589 55488 55</a></span>
             </i>
           </div>
           <div className="social-links d-none d-md-flex align-items-center">
