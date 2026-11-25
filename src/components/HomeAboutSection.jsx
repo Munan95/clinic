@@ -39,7 +39,7 @@ const HomeAboutSection = () => {
                 </div>
               </div>
               <div className='cta-section'>
-                <a href='about.html' className='btn-primary'>
+                <a href='/about' className='btn-primary'>
                   Learn More About Us
                 </a>
               </div>
