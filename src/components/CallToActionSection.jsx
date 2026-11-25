@@ -20,11 +20,11 @@ const CallToActionSection = () => {
                   Ut enim ad minim veniam, quis nostrud exercitation.
                 </p>
                 <div className='cta-wrapper'>
-                  <a href='appointment.html' className='primary-cta'>
+                  <a href='/appointment' className='primary-cta'>
                     <span>Schedule Consultation</span>
                     <i className='bi bi-arrow-right' />
                   </a>
-                  <a href='services.html' className='secondary-cta'>
+                  <a href='/services' className='secondary-cta'>
                     <span>Explore Services</span>
                     <i className='bi bi-arrow-right' />
                   </a>
@@ -123,7 +123,7 @@ const CallToActionSection = () => {
                   <i className='bi bi-telephone' />
                   <span>(555) 123-4567</span>
                 </a>
-                <a href='contact.html' className='contact-link'>
+                <a href='/contact' className='contact-link'>
                   Find Location
                 </a>
               </div>
