@@ -104,7 +104,7 @@ const HeroSection = () => {
                 </div>
                 <div className='emergency-info'>
                   <small>Emergency Hotline</small>
-                  <strong>+1 (555) 911-2468</strong>
+                  <strong><a href='tel:+1 (555) 911-2468'>+1 (555) 911-2468</a></strong>
                 </div>
               </div>
             </div>
