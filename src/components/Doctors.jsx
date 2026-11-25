@@ -1,412 +1,71 @@
+import { Link } from "react-router-dom";
+
+const doctors = [
+  { id: 1, name: "Dr. Marcus Johnson", specialty: "Cardiologist", dept: "Cardiology", years: 15, img: "/assets/img/health/staff-1.webp", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+  { id: 2, name: "Dr. Sarah Williams", specialty: "Neurologist", dept: "Neurology", years: 12, img: "/assets/img/health/staff-2.webp", bio: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+  { id: 3, name: "Dr. Michael Chen", specialty: "Orthopedic Surgeon", dept: "Orthopedics", years: 18, img: "/assets/img/health/staff-3.webp", bio: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
+  { id: 4, name: "Dr. Emily Rodriguez", specialty: "Pediatrician", dept: "Pediatrics", years: 10, img: "/assets/img/health/staff-4.webp", bio: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
+  { id: 5, name: "Dr. David Thompson", specialty: "Dermatologist", dept: "Dermatology", years: 14, img: "/assets/img/health/staff-5.webp", bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium." },
+  { id: 6, name: "Dr. Lisa Anderson", specialty: "Oncologist", dept: "Oncology", years: 16, img: "/assets/img/health/staff-6.webp", bio: "Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt." },
+  { id: 7, name: "Dr. Robert Martinez", specialty: "Emergency Medicine", dept: "Emergency", years: 11, img: "/assets/img/health/staff-7.webp", bio: "Explicabo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur." },
+  { id: 8, name: "Dr. Jennifer Lee", specialty: "Radiologist", dept: "Radiology", years: 13, img: "/assets/img/health/staff-8.webp", bio: "Magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est qui dolorem." },
+];
+
 const Doctors = () => {
-    return (
-        <section id="doctors" className="doctors section">
-            <div className="container" data-aos="fade-up" data-aos-delay={100}>
-                <div className="row gy-4">
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={100}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-1.webp"
-                                    alt="Dr. Marcus Johnson"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Marcus Johnson</h4>
-                                <span className="specialty">Cardiologist</span>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>15+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Cardiology Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
+  return (
+    <section id="doctors" className="doctors section">
+      <div className="container" data-aos="fade-up" data-aos-delay={100}>
+        <div className="row gy-4">
+          {doctors.map((d, i) => (
+            <div
+              key={d.id}
+              className="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay={((i % 4) + 1) * 100}
+            >
+              <div className="doctor-card">
+                <div className="doctor-image">
+                  <img src={d.img} alt={d.name} className="img-fluid" />
+                  <div className="doctor-overlay">
+                    <div className="social-links">
+                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label={`${d.name} on LinkedIn`}>
+                        <i className="bi bi-linkedin" aria-hidden="true" />
+                      </a>
+                      <a href="mailto:contact@example.com" aria-label={`Email ${d.name}`}>
+                        <i className="bi bi-envelope" aria-hidden="true" />
+                      </a>
+                      <a href="tel:+15589554885" aria-label={`Call ${d.name}`}>
+                        <i className="bi bi-phone" aria-hidden="true" />
+                      </a>
                     </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={200}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-2.webp"
-                                    alt="Dr. Sarah Williams"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Sarah Williams</h4>
-                                <span className="specialty">Neurologist</span>
-                                <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>12+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Neurology Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={300}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-3.webp"
-                                    alt="Dr. Michael Chen"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Michael Chen</h4>
-                                <span className="specialty">Orthopedic Surgeon</span>
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat nulla pariatur.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>18+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Orthopedics Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={400}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-4.webp"
-                                    alt="Dr. Emily Rodriguez"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Emily Rodriguez</h4>
-                                <span className="specialty">Pediatrician</span>
-                                <p>
-                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                    officia deserunt mollit anim id est laborum.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>10+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Pediatrics Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={500}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-5.webp"
-                                    alt="Dr. David Thompson"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. David Thompson</h4>
-                                <span className="specialty">Dermatologist</span>
-                                <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium doloremque laudantium.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>14+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Dermatology Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={100}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-6.webp"
-                                    alt="Dr. Lisa Anderson"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Lisa Anderson</h4>
-                                <span className="specialty">Oncologist</span>
-                                <p>
-                                    Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>16+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Oncology Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={200}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-7.webp"
-                                    alt="Dr. Robert Martinez"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Robert Martinez</h4>
-                                <span className="specialty">Emergency Medicine</span>
-                                <p>
-                                    Explicabo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                                    odit aut fugit, sed quia consequuntur.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>11+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Emergency Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
-                    <div
-                        className="col-lg-3 col-md-6"
-                        data-aos="fade-up"
-                        data-aos-delay={300}
-                    >
-                        <div className="doctor-card">
-                            <div className="doctor-image">
-                                <img
-                                    src="assets/img/health/staff-8.webp"
-                                    alt="Dr. Jennifer Lee"
-                                    className="img-fluid"
-                                />
-                                <div className="doctor-overlay">
-                                    <div className="social-links">
-                                        <a href="#!">
-                                            <i className="bi bi-linkedin" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-envelope" />
-                                        </a>
-                                        <a href="#!">
-                                            <i className="bi bi-phone" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="doctor-content">
-                                <h4>Dr. Jennifer Lee</h4>
-                                <span className="specialty">Radiologist</span>
-                                <p>
-                                    Magni dolores eos qui ratione voluptatem sequi nesciunt neque
-                                    porro quisquam est qui dolorem.
-                                </p>
-                                <div className="doctor-meta">
-                                    <div className="experience">
-                                        <i className="bi bi-award" />
-                                        <span>13+ Years Experience</span>
-                                    </div>
-                                    <div className="department">
-                                        <i className="bi bi-building" />
-                                        <span>Radiology Dept.</span>
-                                    </div>
-                                </div>
-                                <a href="appointment.html" className="btn-appointment">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Doctor Card */}
+                  </div>
                 </div>
+
+                <div className="doctor-content">
+                  <h4>{d.name}</h4>
+                  <span className="specialty">{d.specialty}</span>
+                  <p>{d.bio}</p>
+                  <div className="doctor-meta">
+                    <div className="experience">
+                      <i className="bi bi-award" aria-hidden="true" />
+                      <span>{d.years}+ Years Experience</span>
+                    </div>
+                    <div className="department">
+                      <i className="bi bi-building" aria-hidden="true" />
+                      <span>{d.dept} Dept.</span>
+                    </div>
+                  </div>
+                  <Link to={`/appointment?doctor=${d.id}`} className="btn-appointment">
+                    Book Appointment
+                  </Link>
+                </div>
+              </div>
             </div>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Doctors;
