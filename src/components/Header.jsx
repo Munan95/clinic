@@ -21,10 +21,10 @@ const moreLinks = [
 ];
 
 const socials = [
-  { name: "twitter", icon: "bi-twitter-x" },
-  { name: "facebook", icon: "bi-facebook" },
-  { name: "instagram", icon: "bi-instagram" },
-  { name: "linkedin", icon: "bi-linkedin" },
+  { href: "/https://x.com", name: "twitter", icon: "bi-twitter-x" },
+  { href: "/https://www.facebook.com", name: "facebook", icon: "bi-facebook" },
+  { href: "/https://www.instagram.com", name: "instagram", icon: "bi-instagram" },
+  { href: "/https://www.linkedin.com", name: "linkedin", icon: "bi-linkedin" },
 ];
 
 const Header = () => {
@@ -58,17 +58,17 @@ const Header = () => {
         <div className="container d-flex justify-content-center justify-content-md-between">
           <div className="contact-info d-flex align-items-center">
             <i className="bi bi-envelope d-flex align-items-center">
-              <a href="mailto:contact@example.com">contact@example.com</a>
+              <Link to="mailto:contact@example.com">contact@example.com</Link>
             </i>
             <i className="bi bi-phone d-flex align-items-center ms-4">
               <span>+1 5589 55488 55</span>
             </i>
           </div>
           <div className="social-links d-none d-md-flex align-items-center">
-            {socials.map(({ name, icon }) => (
-              <a key={name} href="#!" className={name} aria-label={name}>
+            {socials.map(({ href, name, icon }) => (
+              <Link key={name} to={href} className={name} aria-label={name}>
                 <i className={`bi ${icon}`} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -89,8 +89,8 @@ const Header = () => {
               ))}
 
               <li className="dropdown">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   aria-expanded={moreOpen}
                   className={moreOpen ? "active" : ""}
                   onClick={(e) => {
@@ -100,7 +100,7 @@ const Header = () => {
                 >
                   <span>More Pages</span>{" "}
                   <i className="bi bi-chevron-down toggle-dropdown" />
-                </a>
+                </Link>
                 <ul className={moreOpen ? "dropdown-active" : ""}>
                   {moreLinks.map(({ to, label }) => (
                     <li key={to}>
