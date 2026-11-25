@@ -83,7 +83,7 @@ const HeroSection = () => {
                 data-aos='fade-right'
                 data-aos-delay={600}
               >
-                <a href='appointment.html' className='btn btn-primary'>
+                <a href='/appointment' className='btn btn-primary'>
                   Book Appointment
                 </a>
                 <a
