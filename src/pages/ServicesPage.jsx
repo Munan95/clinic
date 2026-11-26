@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Services from "../components/Services";
-import ServicesPageTitle from "../components/ServicesPageTitle";
+import PageTitle from "../components/PageTitle";
 
 const ServicesPage = () => {
   return (
@@ -10,7 +10,14 @@ const ServicesPage = () => {
       <Header />
 
       <main className='main'>
-        <ServicesPageTitle />
+        {/* PageTitle */}
+        <PageTitle
+          title="Services"
+          description="Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo
+                    odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum
+                    debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat
+                    ipsum dolorem."
+        />
         <Services />
       </main>
 
