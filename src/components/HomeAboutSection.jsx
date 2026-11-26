@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HomeAboutSection = () => {
   return (
     <section id='home-about' className='home-about section'>
@@ -39,9 +41,9 @@ const HomeAboutSection = () => {
                 </div>
               </div>
               <div className='cta-section'>
-                <a href='/about' className='btn-primary'>
+                <Link to='/about' className='btn-primary'>
                   Learn More About Us
-                </a>
+                </Link>
               </div>
             </div>
           </div>
