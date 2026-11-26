@@ -1,188 +1,180 @@
+import { Link, useSearchParams } from "react-router-dom";
+
+const EMERGENCY_PHONE = { display: "+1 (555) 123-4567", href: "tel:+15551234567" };
+
+const services = {
+  neurology: {
+    category: "Advanced Neurology",
+    title: "Comprehensive Neurological Care Services",
+    lead: "Expert diagnosis and treatment for complex neurological conditions using state-of-the-art technology",
+    img: "/assets/img/health/neurology-2.webp",
+    details: [
+      { icon: "bi-activity", title: "Neurological Assessment", text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam." },
+      { icon: "bi-diagram-2", title: "Brain Imaging & Diagnosis", text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti." },
+      { icon: "bi-prescription2", title: "Treatment Planning", text: "Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim laborum." },
+    ],
+    stats: [
+      { number: "95%", label: "Success Rate" }, // verify or remove
+      { number: "24/7", label: "Emergency Care" },
+    ],
+    whyTitle: "Why Choose Our Neurology Department",
+    whyText: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    features: [
+      { icon: "bi-award", text: "Board Certified Specialists" },
+      { icon: "bi-clock-history", text: "Same Day Appointments" },
+      { icon: "bi-shield-plus", text: "Advanced Treatment Options" },
+      { icon: "bi-heart-pulse", text: "Patient-Centered Care" },
+    ],
+    conditions: [
+      "Stroke Recovery", "Epilepsy Management", "Memory Disorders", "Headache Disorders",
+      "Movement Disorders", "Peripheral Neuropathy", "Multiple Sclerosis", "Parkinson's Disease",
+    ],
+  },
+};
+
 const ServiceDetails = () => {
+  const [params] = useSearchParams();
+  const id = params.get("service") ?? "neurology";
+  const s = services[id];
+
+  if (!s) {
     return (
-        <section id="service-details-2" className="service-details-2 section">
-            <div className="container" data-aos="fade-up" data-aos-delay={100}>
-                <div className="row">
-                    <div
-                        className="col-lg-8 mx-auto text-center mb-5"
-                        data-aos="fade-up"
-                        data-aos-delay={150}
-                    >
-                        <div className="service-header">
-                            <div className="service-category">
-                                <span>Advanced Neurology</span>
-                            </div>
-                            <h2>Comprehensive Neurological Care Services</h2>
-                            <p className="lead">
-                                Expert diagnosis and treatment for complex neurological conditions
-                                using state-of-the-art technology
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="row gy-4 align-items-center">
-                    <div className="col-lg-5" data-aos="fade-right" data-aos-delay={200}>
-                        <div className="service-details">
-                            <div className="detail-item">
-                                <div className="icon-wrapper">
-                                    <i className="bi bi-activity" />
-                                </div>
-                                <div className="content">
-                                    <h4>Neurological Assessment</h4>
-                                    <p>
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                        accusantium doloremque laudantium totam rem aperiam.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="detail-item">
-                                <div className="icon-wrapper">
-                                    <i className="bi bi-diagram-2" />
-                                </div>
-                                <div className="content">
-                                    <h4>Brain Imaging &amp; Diagnosis</h4>
-                                    <p>
-                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                        blanditiis praesentium voluptatum deleniti.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="detail-item">
-                                <div className="icon-wrapper">
-                                    <i className="bi bi-prescription2" />
-                                </div>
-                                <div className="content">
-                                    <h4>Treatment Planning</h4>
-                                    <p>
-                                        Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-                                        officia deserunt mollit anim laborum.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-7" data-aos="fade-left" data-aos-delay={300}>
-                        <div className="service-visual">
-                            <img
-                                src="assets/img/health/neurology-2.webp"
-                                alt="Neurology Services"
-                                className="img-fluid"
-                            />
-                            <div className="visual-overlay">
-                                <div className="stats-card">
-                                    <div className="stat">
-                                        <span className="number">95%</span>
-                                        <span className="label">Success Rate</span>
-                                    </div>
-                                    <div className="stat">
-                                        <span className="number">24/7</span>
-                                        <span className="label">Emergency Care</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row gy-4 mt-5">
-                    <div className="col-12" data-aos="fade-up" data-aos-delay={100}>
-                        <div className="service-overview">
-                            <div className="row align-items-center">
-                                <div className="col-lg-6">
-                                    <h3>Why Choose Our Neurology Department</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim veniam quis nostrud exercitation ullamco laboris
-                                        nisi ut aliquip ex ea commodo consequat.
-                                    </p>
-                                    <div className="features-grid">
-                                        <div className="feature">
-                                            <i className="bi bi-award" />
-                                            <span>Board Certified Specialists</span>
-                                        </div>
-                                        <div className="feature">
-                                            <i className="bi bi-clock-history" />
-                                            <span>Same Day Appointments</span>
-                                        </div>
-                                        <div className="feature">
-                                            <i className="bi bi-shield-plus" />
-                                            <span>Advanced Treatment Options</span>
-                                        </div>
-                                        <div className="feature">
-                                            <i className="bi bi-heart-pulse" />
-                                            <span>Patient-Centered Care</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="treatment-areas">
-                                        <h4>Conditions We Treat</h4>
-                                        <div className="condition-tags">
-                                            <span className="tag">Stroke Recovery</span>
-                                            <span className="tag">Epilepsy Management</span>
-                                            <span className="tag">Memory Disorders</span>
-                                            <span className="tag">Headache Disorders</span>
-                                            <span className="tag">Movement Disorders</span>
-                                            <span className="tag">Peripheral Neuropathy</span>
-                                            <span className="tag">Multiple Sclerosis</span>
-                                            <span className="tag">Parkinson's Disease</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="row gy-4 mt-5">
-                    <div className="col-lg-4" data-aos="zoom-in" data-aos-delay={100}>
-                        <div className="action-card primary">
-                            <div className="card-header">
-                                <i className="bi bi-calendar-check" />
-                                <h4>Schedule Consultation</h4>
-                            </div>
-                            <p>Book your neurological evaluation with our expert team</p>
-                            <div className="card-footer">
-                                <a href="#!" className="btn-action">
-                                    Book Now
-                                </a>
-                                <span className="availability">Next available: Tomorrow</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4" data-aos="zoom-in" data-aos-delay={200}>
-                        <div className="action-card secondary">
-                            <div className="card-header">
-                                <i className="bi bi-telephone" />
-                                <h4>Emergency Consultation</h4>
-                            </div>
-                            <p>24/7 neurological emergency support and rapid response</p>
-                            <div className="card-footer">
-                                <a href="tel:+15551234567" className="btn-action">
-                                    Call Now
-                                </a>
-                                <span className="availability">+1 (555) 123-4567</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4" data-aos="zoom-in" data-aos-delay={300}>
-                        <div className="action-card tertiary">
-                            <div className="card-header">
-                                <i className="bi bi-file-text" />
-                                <h4>Get Second Opinion</h4>
-                            </div>
-                            <p>Expert review of existing diagnoses and treatment plans</p>
-                            <div className="card-footer">
-                                <a href="#!" className="btn-action">
-                                    Request Review
-                                </a>
-                                <span className="availability">Response within 48h</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section id="service-details-2" className="service-details-2 section">
+        <div className="container text-center">
+          <h2>Service not found</h2>
+          <Link to="/services" className="btn-action">View all services</Link>
+        </div>
+      </section>
+    );
+  }
+
+  const actions = [
+    {
+      type: "primary",
+      icon: "bi-calendar-check",
+      title: "Schedule Consultation",
+      text: "Book your evaluation with our expert team",
+      cta: <Link to={`/appointment?service=${id}`} className="btn-action">Book Now</Link>,
+      note: "Next available: Tomorrow", // replace with real data
+    },
+    {
+      type: "secondary",
+      icon: "bi-telephone",
+      title: "Emergency Consultation",
+      text: "24/7 emergency support and rapid response",
+      cta: <a href={EMERGENCY_PHONE.href} className="btn-action">Call Now</a>,
+      note: EMERGENCY_PHONE.display,
+    },
+    {
+      type: "tertiary",
+      icon: "bi-file-text",
+      title: "Get Second Opinion",
+      text: "Expert review of existing diagnoses and treatment plans",
+      cta: <Link to="/contact" className="btn-action">Request Review</Link>,
+      note: "Response within 48h", // replace with real data
+    },
+  ];
+
+  return (
+    <section id="service-details-2" className="service-details-2 section">
+      <div className="container" data-aos="fade-up" data-aos-delay={100}>
+        <div className="row">
+          <div className="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up" data-aos-delay={150}>
+            <div className="service-header">
+              <div className="service-category">
+                <span>{s.category}</span>
+              </div>
+              <h2>{s.title}</h2>
+              <p className="lead">{s.lead}</p>
             </div>
-        </section>
-    )
+          </div>
+        </div>
+
+        <div className="row gy-4 align-items-center">
+          <div className="col-lg-5" data-aos="fade-right" data-aos-delay={200}>
+            <div className="service-details">
+              {s.details.map((d) => (
+                <div className="detail-item" key={d.title}>
+                  <div className="icon-wrapper">
+                    <i className={`bi ${d.icon}`} aria-hidden="true" />
+                  </div>
+                  <div className="content">
+                    <h4>{d.title}</h4>
+                    <p>{d.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="col-lg-7" data-aos="fade-left" data-aos-delay={300}>
+            <div className="service-visual">
+              <img src={s.img} alt={`${s.category} services`} className="img-fluid" />
+              <div className="visual-overlay">
+                <div className="stats-card">
+                  {s.stats.map((st) => (
+                    <div className="stat" key={st.label}>
+                      <span className="number">{st.number}</span>
+                      <span className="label">{st.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row gy-4 mt-5">
+          <div className="col-12" data-aos="fade-up">
+            <div className="service-overview">
+              <div className="row align-items-center">
+                <div className="col-lg-6">
+                  <h3>{s.whyTitle}</h3>
+                  <p>{s.whyText}</p>
+                  <div className="features-grid">
+                    {s.features.map((f) => (
+                      <div className="feature" key={f.text}>
+                        <i className={`bi ${f.icon}`} aria-hidden="true" />
+                        <span>{f.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="treatment-areas">
+                    <h4>Conditions We Treat</h4>
+                    <div className="condition-tags">
+                      {s.conditions.map((c) => (
+                        <span className="tag" key={c}>{c}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row gy-4 mt-5">
+          {actions.map((a, i) => (
+            <div className="col-lg-4" key={a.title} data-aos="zoom-in" data-aos-delay={(i + 1) * 100}>
+              <div className={`action-card ${a.type}`}>
+                <div className="card-header">
+                  <i className={`bi ${a.icon}`} aria-hidden="true" />
+                  <h4>{a.title}</h4>
+                </div>
+                <p>{a.text}</p>
+                <div className="card-footer">
+                  {a.cta}
+                  <span className="availability">{a.note}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ServiceDetails;
