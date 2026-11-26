@@ -4675,34 +4675,34 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Appointmnet Section
+# Appointment Section
 --------------------------------------------------------------*/
-.appointmnet .booking-wrapper {
+.appointment .booking-wrapper {
   background-color: var(--surface-color);
   border-radius: 15px;
   padding: 60px 40px;
   box-shadow: 0 5px 25px color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.appointmnet .booking-header {
+.appointment .booking-header {
   margin-bottom: 50px;
 }
 
-.appointmnet .booking-header h2 {
+.appointment .booking-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: var(--heading-color);
 }
 
-.appointmnet .booking-header p {
+.appointment .booking-header p {
   font-size: 1.1rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   max-width: 600px;
   margin: 0 auto;
 }
 
-.appointmnet .booking-steps {
+.appointment .booking-steps {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -4710,14 +4710,14 @@ section,
   padding: 30px 0;
 }
 
-.appointmnet .booking-steps .step {
+.appointment .booking-steps .step {
   text-align: center;
   flex: 1;
   max-width: 200px;
   position: relative;
 }
 
-.appointmnet .booking-steps .step:not(:last-child)::after {
+.appointment .booking-steps .step:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 30px;
@@ -4728,7 +4728,7 @@ section,
   z-index: 1;
 }
 
-.appointmnet .booking-steps .step .step-icon {
+.appointment .booking-steps .step .step-icon {
   width: 60px;
   height: 60px;
   background-color: var(--accent-color);
@@ -4741,45 +4741,46 @@ section,
   z-index: 2;
 }
 
-.appointmnet .booking-steps .step .step-icon i {
+.appointment .booking-steps .step .step-icon i {
   font-size: 24px;
   color: var(--contrast-color);
 }
 
-.appointmnet .booking-steps .step .step-content h4 {
+.appointment .booking-steps .step .step-content h4 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
   color: var(--heading-color);
 }
 
-.appointmnet .booking-steps .step .step-content p {
+.appointment .booking-steps .step .step-content p {
   font-size: 0.9rem;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 0;
 }
 
 @media (max-width: 768px) {
-  .appointmnet .booking-steps {
+  .appointment .booking-steps {
     flex-direction: column;
     gap: 20px;
   }
 
-  .appointmnet .booking-steps .step {
+  .appointment .booking-steps .step {
     max-width: none;
   }
 
-  .appointmnet .booking-steps .step:not(:last-child)::after {
+  .appointment .booking-steps .step:not(:last-child)::after {
     display: none;
   }
 }
 
-.appointmnet .appointment-form .php-email-form input[type=text],
-.appointmnet .appointment-form .php-email-form input[type=email],
-.appointmnet .appointment-form .php-email-form input[type=tel],
-.appointmnet .appointment-form .php-email-form input[type=date],
-.appointmnet .appointment-form .php-email-form select,
-.appointmnet .appointment-form .php-email-form textarea {
+/* Form fields */
+.appointment .appointment-form input[type="text"],
+.appointment .appointment-form input[type="email"],
+.appointment .appointment-form input[type="tel"],
+.appointment .appointment-form input[type="date"],
+.appointment .appointment-form select,
+.appointment .appointment-form textarea {
   color: var(--default-color);
   background-color: transparent;
   font-size: 14px;
@@ -4789,31 +4790,45 @@ section,
   transition: all 0.3s ease;
 }
 
-.appointmnet .appointment-form .php-email-form input[type=text]:focus,
-.appointmnet .appointment-form .php-email-form input[type=email]:focus,
-.appointmnet .appointment-form .php-email-form input[type=tel]:focus,
-.appointmnet .appointment-form .php-email-form input[type=date]:focus,
-.appointmnet .appointment-form .php-email-form select:focus,
-.appointmnet .appointment-form .php-email-form textarea:focus {
+.appointment .appointment-form input[type="text"]:focus,
+.appointment .appointment-form input[type="email"]:focus,
+.appointment .appointment-form input[type="tel"]:focus,
+.appointment .appointment-form input[type="date"]:focus,
+.appointment .appointment-form select:focus,
+.appointment .appointment-form textarea:focus {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 80%);
   outline: none;
 }
 
-.appointmnet .appointment-form .php-email-form input[type=text]::placeholder,
-.appointmnet .appointment-form .php-email-form input[type=email]::placeholder,
-.appointmnet .appointment-form .php-email-form input[type=tel]::placeholder,
-.appointmnet .appointment-form .php-email-form input[type=date]::placeholder,
-.appointmnet .appointment-form .php-email-form select::placeholder,
-.appointmnet .appointment-form .php-email-form textarea::placeholder {
+.appointment .appointment-form input[type="text"]::placeholder,
+.appointment .appointment-form input[type="email"]::placeholder,
+.appointment .appointment-form input[type="tel"]::placeholder,
+.appointment .appointment-form input[type="date"]::placeholder,
+.appointment .appointment-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.appointmnet .appointment-form .php-email-form .form-select {
+.appointment .appointment-form .form-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
 
-.appointmnet .appointment-form .php-email-form .btn-book {
+/* Disabled fields (while submitting, or waiting for department / date) */
+.appointment .appointment-form input:disabled,
+.appointment .appointment-form select:disabled,
+.appointment .appointment-form textarea:disabled {
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Time slots that have already passed */
+.appointment .appointment-form select option:disabled {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+/* Submit button */
+.appointment .appointment-form .btn-book {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   padding: 15px 40px;
@@ -4828,16 +4843,35 @@ section,
   cursor: pointer;
 }
 
-.appointmnet .appointment-form .php-email-form .btn-book:hover {
+.appointment .appointment-form .btn-book:hover:not(:disabled) {
   background-color: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-2px);
 }
 
-.appointmnet .appointment-form .php-email-form .btn-book:active {
+.appointment .appointment-form .btn-book:active:not(:disabled) {
   transform: translateY(0);
 }
 
-.appointmnet .emergency-info {
+.appointment .appointment-form .btn-book:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Status messages (loading, error, success) */
+.appointment .appointment-form .alert {
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+}
+
+.appointment .appointment-form .text-center.mb-3 {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+/* Emergency info */
+.appointment .emergency-info {
   margin-top: 30px;
   padding: 20px;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
@@ -4845,28 +4879,28 @@ section,
   text-align: center;
 }
 
-.appointmnet .emergency-info p {
+.appointment .emergency-info p {
   margin: 0;
   color: var(--heading-color);
   font-size: 0.9rem;
 }
 
-.appointmnet .emergency-info p i {
+.appointment .emergency-info p i {
   color: #dc3545;
   margin-right: 8px;
 }
 
-.appointmnet .emergency-info p strong {
+.appointment .emergency-info p strong {
   color: #dc3545;
   font-weight: 700;
 }
 
 @media (max-width: 768px) {
-  .appointmnet .booking-wrapper {
+  .appointment .booking-wrapper {
     padding: 40px 25px;
   }
 
-  .appointmnet .booking-header h2 {
+  .appointment .booking-header h2 {
     font-size: 2rem;
   }
 }
