@@ -20,6 +20,9 @@ importers:
       react-router-dom:
         specifier: ^7.18.6
         version: 7.18.6(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      swiper:
+        specifier: ^14.4.0
+        version: 14.4.0
     devDependencies:
       '@types/react':
         specifier: ^19.3.0
@@ -492,6 +495,10 @@ packages:
     resolution: {integrity: sha512-J7ZjMvHd9O1fcT/5V09QWaaSl2BbWx3F6O08spde82Namf9UB0GxRVIPiNbVsdKkoizHiSpTodo3vp2bAy91MA==}
     engines: {node: '>=6.0.0'}
 
+  swiper@14.4.0:
+    resolution: {integrity: sha512-6axnAuBsttFJe0gwsM5tT203/Bts0vcI+FwIX6dqFE4pUFVW6qrdRprNFQVxOYMW7V0S6A/KIqJ6JaPpNN2MCw==}
+    engines: {node: '>= 4.7.0'}
+
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
@@ -854,6 +861,8 @@ snapshots:
   set-cookie-parser@2.7.3: {}
 
   source-map-js@1.2.4: {}
+
+  swiper@14.4.0: {}
 
   tinyglobby@0.2.17:
     dependencies:

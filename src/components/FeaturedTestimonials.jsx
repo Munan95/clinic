@@ -72,7 +72,7 @@ const FeaturedTestimonials = () => {
           modules={[Autoplay, Pagination]}
           loop
           speed={600}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
           slidesPerView={1}
           spaceBetween={40}
           breakpoints={SWIPER_BREAKPOINTS}
