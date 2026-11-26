@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import DepartmentsTabs from "../components/DepartmentsTabs";
 import Departments from "../components/Departments";
+import PageTitle from "../components/PageTitle";
 
 
 const DepartmentsPage = () => {
