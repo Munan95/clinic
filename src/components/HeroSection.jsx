@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HeroSection = () => {
   return (
     <section id='hero' className='hero section'>
@@ -83,9 +85,9 @@ const HeroSection = () => {
                 data-aos='fade-right'
                 data-aos-delay={600}
               >
-                <a href='/appointment' className='btn btn-primary'>
+                <Link to='/appointment' className='btn btn-primary'>
                   Book Appointment
-                </a>
+                </Link>
                 <a
                   href='https://www.youtube.com/watch?v=Y7f98aduVJ8'
                   className='btn btn-outline glightbox'
