@@ -90,7 +90,9 @@ const HeroSection = () => {
                 </Link>
                 <a
                   href='https://www.youtube.com/watch?v=Y7f98aduVJ8'
-                  className='btn btn-outline glightbox'
+                  className='btn btn-outline'
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className='bi bi-play-circle me-2' />
                   Watch Our Story
