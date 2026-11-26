@@ -1,27 +1,5 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const Counter = ({ end, duration = 1000 }) => {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setValue(end);
-      return;
-    }
-    let raf;
-    const start = performance.now();
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      setValue(Math.floor(progress * end));
-      if (progress < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [end, duration]);
-
-  return <span>{value.toLocaleString()}</span>;
-};
+import Counter from "../components/Counter";
 
 const badges = [
   { icon: "bi-shield-check", label: "Accredited" },
